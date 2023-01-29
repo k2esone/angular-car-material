@@ -1,0 +1,40 @@
+<mat-card class="mat-elevation-z2 card-style">
+  <mat-card-title>Car form</mat-card-title>
+  <mat-card-subtitle>Fill out this form to add new car to the system.</mat-card-subtitle>
+  <mat-card-content class="card-content-style">
+    <mat-form-field appearance="fill">
+      <mat-label>Name:</mat-label>
+      <input matInput type="text" placeholder="Car name:" [(ngModel)]="carModel.name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select manufacturer:</mat-label>
+      <mat-select [(ngModel)]="carModel.manufacturer">
+        <mat-option [value]="undefined">None</mat-option>
+        <mat-option [value]="option" *ngFor="let option of getAllCarManufacturers()">
+          {{option}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" hintLabel="Max 10 characters">
+      <mat-label>Model:</mat-label>
+      <input matInput #input type="text" placeholder="Car model:" [(ngModel)]="carModel.model">
+      <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" hintLabel="Engine capacity must not exceed 8.1">
+      <mat-label>Engine capacity:</mat-label>
+      <input matInput #input type="number" step="0.001" placeholder="Car engine capacity:" [(ngModel)]="carModel.engineCapacity">
+      <mat-hint align="end"></mat-hint>
+    </mat-form-field>
+
+    <div class="container form-field-button-panel">
+        <div class="row">
+          <button mat-button mat-raised-button color="warn" class="col-md-3" (click)="clear()">Clear</button>
+          <div class="col-md-6"></div> <!--pusty div-->
+          <button mat-button mat-raised-button color="primary" class="col-md-3" (click)="submit()">Submit</button>
+        </div>
+    </div>
+  </mat-card-content>
+</mat-card>

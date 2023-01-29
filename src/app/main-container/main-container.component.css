@@ -1,0 +1,10 @@
+.main-container {
+  width: calc(55% - 2px);
+  border: 1px solid red;
+  margin: 0 auto;
+}
+
+.main-container .row .col-12 {
+  padding-left: 0;
+  padding-right: 0;
+}

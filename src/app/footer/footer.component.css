@@ -1,0 +1,15 @@
+.footer {
+  background-color: var(--dark-level-1);
+}
+
+.footer .row .col-12 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.footer-copyright {
+  color: navajowhite;
+  font-size: 0.5em;
+  display: flex;
+  flex-direction: row-reverse;
+}
